@@ -1,12 +1,19 @@
-<md-sidenav-container class="example-container">
-    <md-sidenav #sidenav class="example-sidenav">
-        Jolly good!
+<md-sidenav-container class="main-container">
+
+    <md-sidenav #mainSidenav class="sidenav">
+        <app-nav [sidenav]="mainSidenav"></app-nav>
     </md-sidenav>
 
-    <div class="example-sidenav-content">
-        <button md-button (click)="sidenav.open()">
+    <div class="sidenav-content">
+        <button
+            class="sticky-hamburger"
+            md-button
+            (click)="mainSidenav.open()"
+        >
             Open sidenav
         </button>
+
+        <router-outlet></router-outlet>
     </div>
 
 </md-sidenav-container>
