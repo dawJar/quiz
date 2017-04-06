@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from '@angular/material';
+import { AngularFireModule } from 'angularfire2';
+import { firebaseConfig } from '../environments/firebase.config';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { MaterialModule } from '@angular/material';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule
+    MaterialModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
