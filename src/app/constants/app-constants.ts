@@ -1,0 +1,2 @@
+export const INCREMENT = 'INCREMENT';
+export const EVENT_FROM_EFFECT = 'EVENT_FROM_EFFECT';

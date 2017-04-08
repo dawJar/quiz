@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from '@angular/material';
 import { AngularFireModule } from 'angularfire2';
 import { firebaseConfig } from '../environments/firebase.config';
-import { QuizComponent } from './quiz/quiz.component';
-import { HomeComponent } from './home/home.component';
-import { ResultsComponent } from './results/results.component';
+import { QuizComponent } from './components/quiz/quiz.component';
+import { HomeComponent } from './components/home/home.component';
+import { ResultsComponent } from './components/results/results.component';
 import { routing } from './app.routes';
-import { NavComponent } from './nav/nav.component';
+import { NavComponent } from './components/nav/nav.component';
 import { FirebaseService } from './firebase.service';
-import { QuestionComponent } from './quiz/question/question.component';
+import { QuestionComponent } from './components/question/question.component';
+import { StoreModule } from '@ngrx/store';
+import { combineReducers } from './reducers/index';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { QuestionComponent } from './quiz/question/question.component';
     HttpModule,
     MaterialModule,
     routing,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    StoreModule.provideStore(combineReducers)
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]

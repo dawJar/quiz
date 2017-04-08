@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseListObservable } from 'angularfire2';
-import { FirebaseService } from '../firebase.service';
+import { FirebaseService } from '../../firebase.service';
 
 @Component({
   selector: 'app-quiz',
