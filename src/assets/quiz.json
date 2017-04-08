@@ -1,148 +1,180 @@
 {
-	questions: [
+	"questions": [
 		{
 			"questionId": 0,
 			"question": "Which US state is named on the label of a Jack Daniels bottle?",
-			"answerA": "LesserPoland",
-			"answerB": "Texas",
-			"answerC": "Colorado",
-			"answerD": "Tennessee",
-			"correctAnswer": "answerD",
+			"correctAnswer": "D",
+			"answers": [
+              { "tick": "A", "answer": "Lesser Poland"},
+              { "tick": "B", "answer": "Texas" },
+              { "tick": "C", "answer": "Colorado" },
+              { "tick": "D", "answer": "Tennessee" }
+            ]
 		},
 		{
 			"questionId": 1,
 			"question": "In which year did Henry VIII become King of England?",
-			"answerA": 1500,
-			"answerB": 1509,
-			"answerC": 1599,
-			"answerD": 1811,
-			"correctAnswer": "answerB",
+			"correctAnswer": "B",
+			"answers": [
+              { "tick": "A", "answer": 1500 },
+              { "tick": "B", "answer": 1509 },
+              { "tick": "C", "answer": 1599 },
+              { "tick": "D", "answer": 1811 }
+            ]
 		},
 		{
 			"questionId": 2,
 			"question": "On which continent can you visit Sierra Leone?",
-			"answerA": "Africa",
-			"answerB": "Europe",
-			"answerC": "North america",
-			"answerD": "Asia",
-			"correctAnswer": "answerA",
+			"correctAnswer": "A",
+			"answers": [
+              { "tick": "A", "answer": "Africa" },
+              { "tick": "B", "answer": "Europe" },
+              { "tick": "C", "answer": "North america" },
+              { "tick": "D", "answer": "Asia" }
+            ]
 		},
 		{
 			"questionId": 3,
 			"question": "What is the capital of Turkey?",
-			"answerA": "Stambul",
-			"answerB": "Damascus",
-			"answerC": "Rome",
-			"answerD": "Ankara",
-			"correctAnswer": "answerD",
+			"correctAnswer": "D",
+			"answers": [
+              { "tick": "A", "answer": "Stambul"} ,
+              { "tick": "B", "answer": "Damascus" },
+              { "tick": "C", "answer": "Rome" },
+              { "tick": "D", "answer": "Ankara" }
+            ]
 		},
 		{
 			"questionId": 4,
 			"question": "Where was built the first subway?",
-			"answerA": "New York",
-			"answerB": "Paris",
-			"answerC": "London",
-			"answerD": "Tokio",
-			"correctAnswer": "answerC",
+			"correctAnswer": "C",
+			"answers": [
+              { "tick": "A", "answer": "New Yo rk"},
+              { "tick": "B", "answer": "Paris" },
+              { "tick": "C", "answer": "London" },
+              { "tick": "D", "answer": "Tokio" }
+            ]
 		},
 		{
 			"questionId": 5,
 			"question": "Which country is the origin of the car brands Daewoo and Kia?",
-			"answerA": "China",
-			"answerB": "North Korea",
-			"answerC": "South Korea",
-			"answerD": "Japan",
-			"correctAnswer": "answerC",
+			"correctAnswer": "C",
+			"answers": [
+              { "tick": "A", "answer": "China"} ,
+              { "tick": "B", "answer": "North Korea" },
+              { "tick": "C", "answer": "South Korea" },
+              { "tick": "D", "answer": "Japan" }
+            ]
 		},
 		{
 			"questionId": 6,
 			"question": "In what year was Google launched on the web?",
-			"answerA": 1988,
-			"answerB": 1993,
-			"answerC": 2003,
-			"answerD": 1998,
-			"correctAnswer": "answerD",
+			"correctAnswer": "D",
+			"answers": [
+              { "tick": "A", "answer": 1988 },
+              { "tick": "B", "answer": 1993 },
+              { "tick": "C", "answer": 2003 },
+              { "tick": "D", "answer": 1998 }
+            ]
 		},
 		{
 			"questionId": 7,
 			"question": "What is Japanese sake made from?",
-			"answerA": "Rice",
-			"answerB": "Cherries",
-			"answerC": "Cereal",
-			"answerD": "Apples",
-			"correctAnswer": "answerA",
+			"correctAnswer": "A",
+			"answers": [
+              { "tick": "A", "answer": "Rice"} ,
+              { "tick": "B", "answer": "Cherries" },
+              { "tick": "C", "answer": "Melons" },
+              { "tick": "D", "answer": "Apples" }
+            ]
 		},
 		{
 			"questionId": 8,
 			"question": "What color is cobalt?",
-			"answerA": "blue",
-			"answerB": "red",
-			"answerC": "yellow",
-			"answerD": "green",
-			"correctAnswer": "answerA",
+			"correctAnswer": "A",
+			"answers": [
+              { "tick": "A", "answer": "blue "},
+              { "tick": "B", "answer": "red" },
+              { "tick": "C", "answer": "yellow" },
+              { "tick": "D", "answer": "green" }
+            ]
 		},
 		{
 			"questionId": 9,
 			"question": "Which planet is nearest the sun?",
-			"answerA": "Earth",
-			"answerB": "Mercury",
-			"answerC": "Naptune",
-			"answerD": "Mars",
-			"correctAnswer": "answerB",
+			"correctAnswer": "B",
+			"answers": [
+              { "tick": "A", "answer": "Earth"} ,
+              { "tick": "B", "answer": "Mercury" },
+              { "tick": "C", "answer": "Naptune" },
+              { "tick": "D", "answer": "Mars" }
+            ]
 		},
 		{
 			"questionId": 10,
 			"question": "Which unit indicates the light intensity?",
-			"answerA": "Candela",
-			"answerB": "Volt",
-			"answerC": "Luminosity",
-			"answerD": "Kilogram",
-			"correctAnswer": "answerA",
+			"correctAnswer": "A",
+			"answers": [
+              { "tick": "A", "answer": "Cande la"},
+              { "tick": "B", "answer": "Volt" },
+              { "tick": "C", "answer": "Luminosity" },
+              { "tick": "D", "answer": "Kilogram" }
+            ]
 		},
 		{
 			"questionId": 11,
 			"question": "What was the former name of New York?",
-			"answerA": "New Amsterdam",
-			"answerB": "New London",
-			"answerC": "New Madrit",
-			"answerD": "New Pekin",
-			"correctAnswer": "answerA",
+			"correctAnswer": "A",
+			"answers": [
+              { "tick": "A", "answer": "New Amsterd am"},
+              { "tick": "B", "answer": "New London" },
+              { "tick": "C", "answer": "New Madrit" },
+              { "tick": "D", "answer": "New Pekin" }
+            ]
 		},
 		{
 			"questionId": 12,
 			"question": "In which city is the oldest zoo in the world?",
-			"answerA": "Berlin",
-			"answerB": "Cracow",
-			"answerC": "Belgrade",
-			"answerD": "Vienna",
-			"correctAnswer": "answerD",
+			"correctAnswer": "D",
+			"answers": [
+              { "tick": "A", "answer": "Berlin" },
+              { "tick": "B", "answer": "Cracow" },
+              { "tick": "C", "answer": "Belgrade" },
+              { "tick": "D", "answer": "Vienna" }
+            ]
 		},
 		{
 			"questionId": 13,
 			"question": "After which animals are the Canary Islands named?",
-			"answerA": "Canaries",
-			"answerB": "Dogs",
-			"answerC": "Horses",
-			"answerD": "Cats",
-			"correctAnswer": "answerB",
+			"correctAnswer": "B",
+			"answers": [
+              { "tick": "A", "answer": "Canar ies"},
+              { "tick": "B", "answer": "Dogs" },
+              { "tick": "C", "answer": "Horses" },
+              { "tick": "D", "answer": "Cats" }
+            ]
 		},
 		{
 			"questionId": 14,
 			"question": "For how many years is a French president elected?",
-			"answerA": "Four",
-			"answerB": "Five",
-			"answerC": "Three",
-			"answerD": "Seven",
-			"correctAnswer": "answerD",
+			"correctAnswer": "D",
+			"answers": [
+              { "tick": "A", "answer": "Four" },
+              { "tick": "B", "answer": "Five" },
+              { "tick": "C", "answer": "Three" },
+              { "tick": "D", "answer": "Seven" }
+            ]
 		},
 		{
 			"questionId": 15,
 			"question": "In what year was the Berlin wall built?",
-			"answerA": 1955,
-			"answerB": 1961,
-			"answerC": 1945,
-			"answerD": 1989,
-			"correctAnswer": "answerB",
+			"correctAnswer": "B",
+			"answers": [
+              { "tick": "A", "answer": 1955 },
+              { "tick": "B", "answer": 1961 },
+              { "tick": "C", "answer": 1945 },
+              { "tick": "D", "answer": 1989 }
+            ]
 		}
 	]
 }

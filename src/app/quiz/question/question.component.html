@@ -1,0 +1,14 @@
+<div class="question-container">
+    <p>
+        Q: {{ currentQuestion.question }}
+    </p>
+
+    <md-card
+        *ngFor="let obj of currentQuestion.answers"
+        (click)="goToNextQuestion()"
+    >
+        {{ obj.tick }}: {{ obj.answer }}
+    </md-card>
+
+</div>
+

@@ -1,3 +1,11 @@
-<p>
-  quiz works!
-</p>
+<md-card *ngIf="doesQuizStarted !== false">
+    <app-question
+        [currentQuestion]="randomQuestions[currentQuestionToRender]"
+        (nextQuestion)="handleNextQuestion()"
+    >
+    </app-question>
+</md-card>
+
+<md-card *ngIf="doesQuizStarted === false">
+    <button md-raised-button (click)="startQuiz()">START QUIZ</button>
+</md-card>

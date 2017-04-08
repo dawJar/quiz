@@ -1,0 +1,17 @@
+$answerCardWidth: 100%;
+$hoverAnswerColor: beige;
+
+md-card {
+    box-sizing: border-box;
+    margin: 12px auto;
+    cursor: pointer;
+    width: $answerCardWidth;
+    &:hover {
+        width: $answerCardWidth + 1%;
+        background-color: $hoverAnswerColor;
+    }
+}
+
+p {
+    margin-bottom: 24px;
+}

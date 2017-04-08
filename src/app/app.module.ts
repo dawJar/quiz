@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { ResultsComponent } from './results/results.component';
 import { routing } from './app.routes';
 import { NavComponent } from './nav/nav.component';
+import { FirebaseService } from './firebase.service';
+import { QuestionComponent } from './quiz/question/question.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { NavComponent } from './nav/nav.component';
     QuizComponent,
     HomeComponent,
     ResultsComponent,
-    NavComponent
+    NavComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import { NavComponent } from './nav/nav.component';
     routing,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
