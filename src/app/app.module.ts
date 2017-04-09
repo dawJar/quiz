@@ -16,6 +16,8 @@ import { FirebaseService } from './firebase.service';
 import { QuestionComponent } from './components/question/question.component';
 import { StoreModule } from '@ngrx/store';
 import { combineReducers } from './reducers/index';
+import { EffectsModule } from '@ngrx/effects';
+import { MainEffects } from './effects/MainEffects';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { combineReducers } from './reducers/index';
     MaterialModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
-    StoreModule.provideStore(combineReducers)
+    StoreModule.provideStore(combineReducers),
+    EffectsModule.run(MainEffects)
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]
