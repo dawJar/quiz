@@ -16,6 +16,7 @@ import { FirebaseService } from './services/firebase.service';
 import { QuestionComponent } from './components/question/question.component';
 import { StoreModule } from '@ngrx/store';
 import { combineReducers } from './reducers/index';
+import { QuizCardComponent } from './components/quiz-card/quiz-card.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { combineReducers } from './reducers/index';
     HomeComponent,
     ResultsComponent,
     NavComponent,
-    QuestionComponent
+    QuestionComponent,
+    QuizCardComponent
   ],
   imports: [
     BrowserModule,

@@ -4,3 +4,4 @@ export const START_QUIZ = 'START_QUIZ';
 export const QUIZ_COMPLETE = 'QUIZ_COMPLETE';
 export const INCREMENT_SCORE = 'INCREMENT_SCORE';
 export const RESTART_QUIZ = 'RESTART_QUIZ';
+export const NEXT_QUESTION = 'NEXT_QUESTION';

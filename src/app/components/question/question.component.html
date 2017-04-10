@@ -5,7 +5,7 @@
 
     <md-card
         *ngFor="let obj of currentQuestion.answers"
-        (click)="goToNextQuestion()"
+        (click)="handleNextQuestion()"
     >
         {{ obj.tick }}: {{ obj.answer }}
     </md-card>

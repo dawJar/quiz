@@ -1,11 +1,6 @@
 import { Action, ActionReducer } from '@ngrx/store';
 import { QuizState } from '../state/app-state';
-import {
-    FETCHED_QUESTIONS_FROM_DATABASE,
-    INCREMENT_SCORE, QUIZ_COMPLETE, RESTART_QUIZ,
-    SET_QUIZ_QUESTIONS,
-    START_QUIZ
-} from '../constants/app-constants';
+import * as types from '../constants/app-constants';
 
 const initialState: QuizState = {
     questions: [],
@@ -23,12 +18,12 @@ export const quizReducer: ActionReducer<QuizState> = (
 
     switch (action.type) {
 
-        case FETCHED_QUESTIONS_FROM_DATABASE:
+        case types.FETCHED_QUESTIONS_FROM_DATABASE:
             return Object.assign({}, state, {
                 questions: action.payload
             });
 
-        case SET_QUIZ_QUESTIONS:
+        case types.SET_QUIZ_QUESTIONS:
             const { questions } = state;
             const questionsLen = questions.length;
             let questionCount = 0;
@@ -45,22 +40,35 @@ export const quizReducer: ActionReducer<QuizState> = (
                 quizQuestions: Array.from(questionsSet)
             });
 
-        case START_QUIZ:
+        case types.START_QUIZ:
             return Object.assign({}, state, {
                 quizStarted: !state.quizStarted
             });
 
-        case QUIZ_COMPLETE:
+        case types.QUIZ_COMPLETE:
             return Object.assign({}, state, {
                 quizComplete: !state.quizComplete
             });
 
-        case INCREMENT_SCORE:
+        case types.INCREMENT_SCORE:
             return Object.assign({}, state, {
-                userScore: state.userScore++
+                userScore: ++state.userScore
             });
 
-        case RESTART_QUIZ:
+        case types.NEXT_QUESTION:
+            if (state.currentQuizQuestion >= 4) {
+                return Object.assign({}, state, {
+                    currentQuizQuestion: 0,
+                    quizComplete: true,
+                    quizStarted: false
+                });
+            } else {
+                return Object.assign({}, state, {
+                    currentQuizQuestion: ++state.currentQuizQuestion
+                });
+            }
+
+        case types.RESTART_QUIZ:
             return Object.assign({}, state, {
                 quizStarted: false,
                 currentQuizQuestion: 0,

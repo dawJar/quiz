@@ -1,0 +1,23 @@
+<div *ngIf="quizComplete === true">
+    <p>score: {{ userScore }}</p>
+    <button
+        md-raised-button
+        (click)="handleClickQuizCard('post')"
+    >
+        POST SCORE
+    </button>
+    <button
+        md-raised-button
+        (click)="handleClickQuizCard('restart')"
+    >
+        RESTART QUIZ
+    </button>
+</div>
+<div *ngIf="quizComplete !== true">
+    <button
+        md-raised-button
+        (click)="handleClickQuizCard('start')"
+    >
+        START QUIZ
+    </button>
+</div>

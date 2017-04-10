@@ -16,7 +16,7 @@ export class QuestionComponent implements OnInit {
       console.log(this.currentQuestion);
   }
 
-  goToNextQuestion() {
+  handleNextQuestion() {
     this.nextQuestion.emit();
   }
 }

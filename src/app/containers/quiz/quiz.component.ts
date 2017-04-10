@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { Question, QuizState } from '../../state/app-state';
 import { Store } from '@ngrx/store';
-import { FETCHED_QUESTIONS_FROM_DATABASE, SET_QUIZ_QUESTIONS, START_QUIZ } from '../../constants/app-constants';
+import * as types from '../../constants/app-constants';
 
 @Component({
     selector: 'app-quiz',
@@ -32,20 +32,47 @@ export class QuizComponent implements OnInit {
     ngOnInit() {
         this.fs$.fetchQuestions().subscribe(questions =>
             this.store.dispatch({
-                type: FETCHED_QUESTIONS_FROM_DATABASE,
+                type: types.FETCHED_QUESTIONS_FROM_DATABASE,
                 payload: questions
             }));
     }
 
+    nextQuestion() {
+        this.store.dispatch({ type: types.NEXT_QUESTION });
+    }
+
+    clickQuizCard(clickAction: string) {
+        switch (clickAction) {
+
+            case 'start':
+                this.startQuiz();
+                break;
+
+            case 'restart':
+                this.restartQuiz();
+                break;
+
+            case 'post':
+                this.postScore();
+                break;
+
+            default:
+                this.restartQuiz();
+        }
+    }
+
     startQuiz() {
-        console.log(this.quizQuestions);
-        console.log(typeof this.quizQuestions);
-        console.log(this.quizQuestions[0]);
-        this.store.dispatch({ type: SET_QUIZ_QUESTIONS });
-        this.store.dispatch({ type: START_QUIZ });
+        this.store.dispatch({ type: types.SET_QUIZ_QUESTIONS });
+        this.store.dispatch({ type: types.START_QUIZ });
     }
 
-    handleNextQuestion() {
-
+    restartQuiz() {
+        this.store.dispatch({ type: types.RESTART_QUIZ });
     }
+
+    // TODO implement post score
+    postScore() {
+        console.log('post');
+    }
+
 }

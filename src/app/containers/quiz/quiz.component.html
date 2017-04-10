@@ -1,11 +1,16 @@
 <md-card *ngIf="quizStarted !== false">
     <app-question
         [currentQuestion]="quizQuestions[currentQuizQuestion]"
-        (nextQuestion)="handleNextQuestion()"
+        (nextQuestion)="nextQuestion()"
     >
     </app-question>
 </md-card>
 
 <md-card *ngIf="quizStarted === false">
-    <button md-raised-button (click)="startQuiz()">START QUIZ</button>
+    <app-quiz-card
+        [quizComplete]="quizComplete"
+        [userScore]="userScore"
+        (clickQuizCard)="clickQuizCard($event)"
+    >
+    </app-quiz-card>
 </md-card>
