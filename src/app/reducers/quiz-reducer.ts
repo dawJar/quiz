@@ -50,10 +50,14 @@ export const quizReducer: ActionReducer<QuizState> = (
                 quizComplete: !state.quizComplete
             });
 
-        case types.INCREMENT_SCORE:
-            return Object.assign({}, state, {
-                userScore: ++state.userScore
-            });
+        case types.VALIDATE_SCORE:
+            const { quizQuestions, currentQuizQuestion } = state;
+
+            const correctAnswer = quizQuestions[currentQuizQuestion].correctAnswer === action.payload;
+
+            return (correctAnswer) ? Object.assign({}, state, {
+                                        userScore: ++state.userScore
+                                    }) : state;
 
         case types.NEXT_QUESTION:
             if (state.currentQuizQuestion >= 4) {

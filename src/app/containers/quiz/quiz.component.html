@@ -1,7 +1,7 @@
 <md-card *ngIf="quizStarted !== false">
     <app-question
         [currentQuestion]="quizQuestions[currentQuizQuestion]"
-        (nextQuestion)="nextQuestion()"
+        (nextQuestion)="nextQuestion($event)"
     >
     </app-question>
 </md-card>

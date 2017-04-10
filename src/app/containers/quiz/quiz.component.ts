@@ -37,7 +37,8 @@ export class QuizComponent implements OnInit {
             }));
     }
 
-    nextQuestion() {
+    nextQuestion(chosenAnswer: string) {
+        this.store.dispatch({ type: types.VALIDATE_SCORE, payload: chosenAnswer });
         this.store.dispatch({ type: types.NEXT_QUESTION });
     }
 

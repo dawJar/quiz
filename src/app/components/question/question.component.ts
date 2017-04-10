@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class QuestionComponent implements OnInit {
 
   @Input() currentQuestion;
-  @Output() nextQuestion = new EventEmitter();
+  @Output() nextQuestion: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
@@ -16,7 +16,7 @@ export class QuestionComponent implements OnInit {
       console.log(this.currentQuestion);
   }
 
-  handleNextQuestion() {
-    this.nextQuestion.emit();
+  handleNextQuestion(chosenAnswer: string) {
+     this.nextQuestion.emit(chosenAnswer);
   }
 }
