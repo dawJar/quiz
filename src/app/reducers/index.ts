@@ -1,5 +1,5 @@
-import { mainReducer } from './main-reducer';
+import { quizReducer } from './quiz-reducer';
 
 export const combineReducers = {
-  mainReducer
+    quizReducer
 };

@@ -1,5 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
-import { QuizComponent } from './components/quiz/quiz.component';
+import { QuizComponent } from './containers/quiz/quiz.component';
 import { ResultsComponent } from './components/results/results.component';
 import { HomeComponent } from './components/home/home.component';
 

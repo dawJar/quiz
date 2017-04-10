@@ -12,7 +12,9 @@ export class QuestionComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+      console.log(this.currentQuestion);
+  }
 
   goToNextQuestion() {
     this.nextQuestion.emit();

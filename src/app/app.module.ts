@@ -7,17 +7,15 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from '@angular/material';
 import { AngularFireModule } from 'angularfire2';
 import { firebaseConfig } from '../environments/firebase.config';
-import { QuizComponent } from './components/quiz/quiz.component';
+import { QuizComponent } from './containers/quiz/quiz.component';
 import { HomeComponent } from './components/home/home.component';
 import { ResultsComponent } from './components/results/results.component';
 import { routing } from './app.routes';
 import { NavComponent } from './components/nav/nav.component';
-import { FirebaseService } from './firebase.service';
+import { FirebaseService } from './services/firebase.service';
 import { QuestionComponent } from './components/question/question.component';
 import { StoreModule } from '@ngrx/store';
 import { combineReducers } from './reducers/index';
-import { EffectsModule } from '@ngrx/effects';
-import { MainEffects } from './effects/MainEffects';
 
 @NgModule({
   declarations: [
@@ -35,8 +33,7 @@ import { MainEffects } from './effects/MainEffects';
     MaterialModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
-    StoreModule.provideStore(combineReducers),
-    EffectsModule.run(MainEffects)
+    StoreModule.provideStore(combineReducers)
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]
