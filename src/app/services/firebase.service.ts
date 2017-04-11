@@ -1,13 +1,30 @@
 import { Injectable } from '@angular/core';
-import { AngularFire } from 'angularfire2';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { Result } from '../state/app-state';
 
 @Injectable()
 export class FirebaseService {
 
-  constructor(private af: AngularFire) { }
+    questions: FirebaseListObservable<any[]>;
+    results: FirebaseListObservable<any[]>;
+    result: Result;
 
-  fetchQuestions() {
-    return this.af.database.list('/questions');
-  }
+    constructor(private af: AngularFire) {
+        this.questions = this.af.database.list('/questions');
+        this.results = this.af.database.list('/results');
+    }
+
+    fetchQuestions() {
+        return this.questions;
+    }
+
+    fetchResults() {
+        return this.results;
+    }
+
+    addScore(nick: string, score: number) {
+        this.result = { nick, score };
+        this.results.push(this.result);
+    }
 
 }

@@ -47,7 +47,7 @@ export const quizReducer: ActionReducer<QuizState> = (
                 quizStarted: !state.quizStarted,
             });
 
-        case types.QUIZ_COMPLETE:
+        case types.STOP_QUIZ:
             return Object.assign({}, state, {
                 quizComplete: !state.quizComplete
             });

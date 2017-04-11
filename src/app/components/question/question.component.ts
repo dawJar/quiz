@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.scss']
 })
-export class QuestionComponent implements OnInit {
+export class QuestionComponent {
 
   @Input() score;
   @Input() currentQuestion;
@@ -15,10 +15,6 @@ export class QuestionComponent implements OnInit {
   @Output() nextQuestion: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
-
-  ngOnInit() {
-      console.log(this.currentQuestion);
-  }
 
   handleNextQuestion(chosenAnswer: string) {
       this.nextQuestion.emit(chosenAnswer);

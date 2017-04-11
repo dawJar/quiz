@@ -22,3 +22,7 @@ export interface Answer {
     tick: string;
 }
 
+export interface Result {
+    nick: string;
+    score: number;
+}

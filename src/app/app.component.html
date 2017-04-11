@@ -1,7 +1,10 @@
 <md-sidenav-container class="main-container">
 
     <md-sidenav #mainSidenav class="sidenav">
-        <app-nav [sidenav]="mainSidenav"></app-nav>
+        <app-nav
+            [sidenav]="mainSidenav"
+            (resetQuiz)="resetQuiz()"
+        ></app-nav>
     </md-sidenav>
 
     <div class="sidenav-content">

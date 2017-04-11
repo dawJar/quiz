@@ -1,21 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit {
+export class NavComponent {
 
   @Input() sidenav;
+  @Output() resetQuiz: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
   closeSidenav() {
-    this.sidenav.close();
+      this.sidenav.close();
+      this.resetQuiz.emit();
   }
 
 }
