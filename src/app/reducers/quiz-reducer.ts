@@ -9,7 +9,9 @@ const initialState: QuizState = {
     currentQuizQuestion: 0,
     currentCorrectAnswer: '',
     quizComplete: false,
-    userScore: 0
+    userScore: 0,
+    pctRemaining: 100,
+    pctRemainingRunning: false
 };
 
 export const quizReducer: ActionReducer<QuizState> = (
@@ -42,7 +44,7 @@ export const quizReducer: ActionReducer<QuizState> = (
 
         case types.START_QUIZ:
             return Object.assign({}, state, {
-                quizStarted: !state.quizStarted
+                quizStarted: !state.quizStarted,
             });
 
         case types.QUIZ_COMPLETE:
@@ -62,7 +64,8 @@ export const quizReducer: ActionReducer<QuizState> = (
                     currentQuizQuestion: 0,
                     quizComplete: true,
                     quizStarted: false,
-                    currentCorrectAnswer: ''
+                    currentCorrectAnswer: '',
+                    pctRemainingRunning: false
                 });
             } else {
                 return Object.assign({}, state, {
@@ -77,17 +80,29 @@ export const quizReducer: ActionReducer<QuizState> = (
                 currentCorrectAnswer
             });
 
+        case types.SET_PCT_REMAINING:
+            return Object.assign({}, state, {
+                pctRemaining: state.pctRemaining - 1,
+                pctRemainingRunning: true
+            });
+
+        case types.RESET_PCT_REMAINING:
+            return Object.assign({}, state, {
+                pctRemaining: 100,
+                pctRemainingRunning: false
+            });
+
         case types.RESTART_QUIZ:
             return Object.assign({}, state, {
                 quizStarted: false,
                 currentQuizQuestion: 0,
                 quizComplete: false,
-                userScore: 0
+                userScore: 0,
+                pctRemaining: 100
             });
 
         default:
             return state;
 
     }
-
 };

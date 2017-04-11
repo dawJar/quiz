@@ -1,0 +1,17 @@
+$hoverAnswerColor: darkkhaki;
+$blinkingCorrectAnswer: darken($hoverAnswerColor, 10);
+$lighten: lighten($hoverAnswerColor, 10);
+
+@mixin progressBarStyle($bgColor) {
+    height: 6px;
+    background-color: $bgColor;
+    border-radius: 2px;
+}
+
+div.progress-main {
+    @include progressBarStyle($lighten);
+}
+
+div.progress-time-remaining {
+    @include progressBarStyle($blinkingCorrectAnswer);
+}

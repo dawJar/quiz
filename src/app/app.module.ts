@@ -17,6 +17,7 @@ import { QuestionComponent } from './components/question/question.component';
 import { StoreModule } from '@ngrx/store';
 import { combineReducers } from './reducers/index';
 import { QuizCardComponent } from './components/quiz-card/quiz-card.component';
+import { ProgressBarComponent } from './containers/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { QuizCardComponent } from './components/quiz-card/quiz-card.component';
     ResultsComponent,
     NavComponent,
     QuestionComponent,
-    QuizCardComponent
+    QuizCardComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,

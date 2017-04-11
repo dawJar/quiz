@@ -6,6 +6,8 @@ export interface QuizState {
     currentCorrectAnswer: string;
     quizComplete: boolean;
     userScore: number;
+    pctRemaining: number;
+    pctRemainingRunning: boolean;
 }
 
 export interface Question {

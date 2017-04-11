@@ -3,6 +3,8 @@
         Q: {{ currentQuestion.question }}
     </p>
 
+    <app-progress-bar></app-progress-bar>
+
     <md-card
         *ngFor="let obj of currentQuestion.answers"
         [ngClass]="(currentCorrectAnswer !== '' && currentCorrectAnswer === obj.tick) ? 'highlight' : ''"
