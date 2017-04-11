@@ -5,6 +5,7 @@
 
     <md-card
         *ngFor="let obj of currentQuestion.answers"
+        [ngClass]="(currentCorrectAnswer !== '' && currentCorrectAnswer === obj.tick) ? 'highlight' : ''"
         (click)="handleNextQuestion(obj.tick)"
     >
         {{ obj.tick }}: {{ obj.answer }}

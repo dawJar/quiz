@@ -3,6 +3,7 @@ export interface QuizState {
     quizQuestions: Question[];
     quizStarted: boolean;
     currentQuizQuestion: number;
+    currentCorrectAnswer: string;
     quizComplete: boolean;
     userScore: number;
 }

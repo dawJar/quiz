@@ -1,5 +1,6 @@
 $answerCardWidth: 100%;
-$hoverAnswerColor: beige;
+$hoverAnswerColor: darkkhaki;
+$blinkingCorrectAnswer: darken($hoverAnswerColor, 10);
 
 md-card {
     box-sizing: border-box;
@@ -7,11 +8,28 @@ md-card {
     cursor: pointer;
     width: $answerCardWidth;
     &:hover {
-        width: $answerCardWidth + 1%;
+        //width: $answerCardWidth + 1%;
         background-color: $hoverAnswerColor;
     }
 }
 
 p {
     margin-bottom: 24px;
+}
+
+.highlight {
+    //background-color: darkkhaki;
+    animation-name: blinkingHighlight;
+    animation-duration: 3s;
+
+}
+
+@keyframes blinkingHighlight {
+    0% { background-color: #fff }
+    17% { background-color: $blinkingCorrectAnswer; }
+    34% { background-color: #fff }
+    51% { background-color: $blinkingCorrectAnswer }
+    68% { background-color: #fff; }
+    85% { background-color: $blinkingCorrectAnswer; }
+    100% { background-color: #fff }
 }

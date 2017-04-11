@@ -15,6 +15,7 @@ export class QuizComponent implements OnInit {
     quizStarted: boolean;
     quizComplete: boolean;
     currentQuizQuestion: number;
+    currentCorrectAnswer: string;
     userScore: number;
 
     constructor(private store: Store<QuizState>, private fs$: FirebaseService) {
@@ -26,6 +27,7 @@ export class QuizComponent implements OnInit {
                 this.quizComplete = state.quizComplete;
                 this.currentQuizQuestion = state.currentQuizQuestion;
                 this.userScore = state.userScore;
+                this.currentCorrectAnswer = state.currentCorrectAnswer;
             });
     }
 
@@ -38,8 +40,11 @@ export class QuizComponent implements OnInit {
     }
 
     nextQuestion(chosenAnswer: string) {
-        this.store.dispatch({ type: types.VALIDATE_SCORE, payload: chosenAnswer });
-        this.store.dispatch({ type: types.NEXT_QUESTION });
+        this.store.dispatch({ type: types.HIGHLIGHT_CORRECT_ANSWER });
+        setTimeout(() => {
+            this.store.dispatch({ type: types.VALIDATE_SCORE, payload: chosenAnswer });
+            this.store.dispatch({ type: types.NEXT_QUESTION });
+        }, 3000);
     }
 
     clickQuizCard(clickAction: string) {

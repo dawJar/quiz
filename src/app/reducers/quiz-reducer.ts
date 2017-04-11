@@ -7,8 +7,9 @@ const initialState: QuizState = {
     quizQuestions: [],
     quizStarted: false,
     currentQuizQuestion: 0,
+    currentCorrectAnswer: '',
     quizComplete: false,
-    userScore: 0,
+    userScore: 0
 };
 
 export const quizReducer: ActionReducer<QuizState> = (
@@ -35,7 +36,6 @@ export const quizReducer: ActionReducer<QuizState> = (
                     questionCount++;
                 }
             }
-
             return Object.assign({}, state, {
                 quizQuestions: Array.from(questionsSet)
             });
@@ -51,10 +51,7 @@ export const quizReducer: ActionReducer<QuizState> = (
             });
 
         case types.VALIDATE_SCORE:
-            const { quizQuestions, currentQuizQuestion } = state;
-
-            const correctAnswer = quizQuestions[currentQuizQuestion].correctAnswer === action.payload;
-
+            const correctAnswer = state.quizQuestions[state.currentQuizQuestion].correctAnswer === action.payload;
             return (correctAnswer) ? Object.assign({}, state, {
                                         userScore: ++state.userScore
                                     }) : state;
@@ -64,13 +61,21 @@ export const quizReducer: ActionReducer<QuizState> = (
                 return Object.assign({}, state, {
                     currentQuizQuestion: 0,
                     quizComplete: true,
-                    quizStarted: false
+                    quizStarted: false,
+                    currentCorrectAnswer: ''
                 });
             } else {
                 return Object.assign({}, state, {
-                    currentQuizQuestion: ++state.currentQuizQuestion
+                    currentQuizQuestion: ++state.currentQuizQuestion,
+                    currentCorrectAnswer: ''
                 });
             }
+
+        case types.HIGHLIGHT_CORRECT_ANSWER:
+            const currentCorrectAnswer = state.quizQuestions[state.currentQuizQuestion].correctAnswer;
+            return Object.assign({}, state, {
+                currentCorrectAnswer
+            });
 
         case types.RESTART_QUIZ:
             return Object.assign({}, state, {
