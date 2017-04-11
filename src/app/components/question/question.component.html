@@ -1,7 +1,6 @@
 <div class="question-container">
-    <p>
-        Q: {{ currentQuestion.question }}
-    </p>
+
+    <p>Q: {{ currentQuestion.question }}</p>
 
     <app-progress-bar></app-progress-bar>
 
@@ -12,6 +11,8 @@
     >
         {{ obj.tick }}: {{ obj.answer }}
     </md-card>
+
+    <app-user-score [score]="score"></app-user-score>
 
 </div>
 

@@ -9,6 +9,7 @@ export class QuestionComponent implements OnInit {
 
   @Input() currentQuestion;
   @Input() currentCorrectAnswer;
+  @Input() score;
   @Output() nextQuestion: EventEmitter<any> = new EventEmitter();
 
   constructor() { }

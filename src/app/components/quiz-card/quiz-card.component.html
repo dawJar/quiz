@@ -1,5 +1,7 @@
 <div class="main-quiz-card" *ngIf="quizComplete === true">
-    <p>score: {{ userScore }}</p>
+
+    <app-user-score [score]="score"></app-user-score>
+
     <div class="btn-group">
         <button
             md-raised-button

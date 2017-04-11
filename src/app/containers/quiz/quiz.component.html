@@ -2,6 +2,7 @@
     <app-question
         [currentQuestion]="quizQuestions[currentQuizQuestion]"
         [currentCorrectAnswer]="currentCorrectAnswer"
+        [score]="userScore"
         (nextQuestion)="nextQuestion($event)"
     >
     </app-question>
@@ -10,7 +11,7 @@
 <md-card *ngIf="quizStarted === false">
     <app-quiz-card
         [quizComplete]="quizComplete"
-        [userScore]="userScore"
+        [score]="userScore"
         (clickQuizCard)="clickQuizCard($event)"
     >
     </app-quiz-card>
