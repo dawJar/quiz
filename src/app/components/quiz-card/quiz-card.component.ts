@@ -7,8 +7,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class QuizCardComponent {
 
-    @Input() quizComplete;
-    @Input() score;
+    @Input() score: number;
+    @Input() quizComplete: boolean;
+    @Input() questionQuantity: number;
     @Output() clickQuizCard: EventEmitter<string> = new EventEmitter();
 
     constructor() { }
@@ -16,5 +17,4 @@ export class QuizCardComponent {
     handleClickQuizCard(clickedBtn: string) {
         this.clickQuizCard.emit(clickedBtn);
     }
-
 }

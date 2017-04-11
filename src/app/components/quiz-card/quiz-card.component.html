@@ -1,3 +1,7 @@
+<div class="main-quiz-card" *ngIf="questionQuantity === 0 && quizComplete === false">
+    <md-spinner></md-spinner>
+</div>
+
 <div class="main-quiz-card" *ngIf="quizComplete === true">
 
     <app-user-score [score]="score"></app-user-score>
@@ -17,7 +21,7 @@
         </button>
     </div>
 </div>
-<div class="main-quiz-card" *ngIf="quizComplete !== true">
+<div class="main-quiz-card" *ngIf="quizComplete === false && questionQuantity > 0">
     <button
         md-raised-button
         (click)="handleClickQuizCard('start')"

@@ -15,6 +15,7 @@ export class QuizComponent implements OnInit {
     userScore: number;
     quizStarted: boolean;
     quizComplete: boolean;
+    questionQuantity: number;
     currentQuizQuestion: number;
     pctRemainingRunning: boolean;
     currentCorrectAnswer: string;
@@ -23,6 +24,7 @@ export class QuizComponent implements OnInit {
         store.select('quizReducer')
             .subscribe((state: QuizState) => {
                 this.quizQuestions = state.quizQuestions;
+                this.questionQuantity = state.questions.length;
                 this.quizStarted = state.quizStarted;
                 this.quizComplete = state.quizComplete;
                 this.currentQuizQuestion = state.currentQuizQuestion;

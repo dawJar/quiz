@@ -7,9 +7,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class QuestionComponent implements OnInit {
 
-  @Input() currentQuestion;
-  @Input() currentCorrectAnswer;
   @Input() score;
+  @Input() currentQuestion;
+  @Input() numberOfQuestion;
+  @Input() currentCorrectAnswer;
+  @Input() quizQuestionQuantity;
   @Output() nextQuestion: EventEmitter<any> = new EventEmitter();
 
   constructor() { }

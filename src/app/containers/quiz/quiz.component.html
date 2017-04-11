@@ -3,6 +3,8 @@
         [currentQuestion]="quizQuestions[currentQuizQuestion]"
         [currentCorrectAnswer]="currentCorrectAnswer"
         [score]="userScore"
+        [quizQuestionQuantity]="quizQuestions.length"
+        [numberOfQuestion]="currentQuizQuestion"
         (nextQuestion)="nextQuestion($event)"
     >
     </app-question>
@@ -12,7 +14,12 @@
     <app-quiz-card
         [quizComplete]="quizComplete"
         [score]="userScore"
+        [questionQuantity]="questionQuantity"
         (clickQuizCard)="clickQuizCard($event)"
     >
     </app-quiz-card>
 </md-card>
+
+<div *ngIf="quizStarted !== false">
+    <button md-fab (click)="clickQuizCard('restart')">R</button>
+</div>
