@@ -62,9 +62,10 @@ export class QuizComponent implements OnInit {
 
     nextQuestion(chosenAnswer: string) {
         if (this.pctRemainingRunning) {
-            this.store.dispatch({type: types.RESET_PCT_REMAINING});
+            this.store.dispatch({type: types.STOP_PROGRESS_BAR});
             this.store.dispatch({type: types.HIGHLIGHT_CORRECT_ANSWER});
             setTimeout(() => {
+                this.store.dispatch({type: types.RESET_PCT_REMAINING});
                 this.store.dispatch({type: types.VALIDATE_SCORE, payload: chosenAnswer});
                 this.store.dispatch({type: types.NEXT_QUESTION});
             }, 3000);

@@ -64,8 +64,7 @@ export const quizReducer: ActionReducer<QuizState> = (
                     currentQuizQuestion: 0,
                     quizComplete: true,
                     quizStarted: false,
-                    currentCorrectAnswer: '',
-                    pctRemainingRunning: false
+                    currentCorrectAnswer: ''
                 });
             } else {
                 return Object.assign({}, state, {
@@ -89,7 +88,11 @@ export const quizReducer: ActionReducer<QuizState> = (
 
         case types.RESET_PCT_REMAINING:
             return Object.assign({}, state, {
-                pctRemaining: 100,
+                pctRemaining: 100
+            });
+
+        case types.STOP_PROGRESS_BAR:
+            return Object.assign({}, state, {
                 pctRemainingRunning: false
             });
 

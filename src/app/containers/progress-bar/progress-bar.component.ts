@@ -16,11 +16,13 @@ export class ProgressBarComponent implements OnInit, OnDestroy {
     quizStarted: boolean;
     timer: Observable<any>;
     subscription: Subscription[] = [];
+    progressBarWidth: string;
 
     constructor(private store: Store<QuizState>) {
         this.subscription.push(store.select('quizReducer')
             .subscribe((state: QuizState) => {
                 this.pctRemaining = state.pctRemaining;
+                this.progressBarWidth = state.pctRemaining.toString() + '%';
                 this.pctRemainingRunning = state.pctRemainingRunning;
                 this.quizStarted = state.quizStarted;
             }));
@@ -36,16 +38,17 @@ export class ProgressBarComponent implements OnInit, OnDestroy {
     }
 
     createTimer(): Subscription {
-        this.timer = Observable.timer(100, 300);
+        this.timer = Observable.timer(100, 100);
 
         return this.timer.subscribe(() => {
             if (this.quizStarted) {
                 if (this.pctRemaining > 0 && this.pctRemainingRunning) {
                     this.store.dispatch({ type: types.SET_PCT_REMAINING });
                 } else if (this.pctRemainingRunning) {
-                    this.store.dispatch({ type: types.RESET_PCT_REMAINING });
+                    this.store.dispatch({ type: types.STOP_PROGRESS_BAR });
                     this.store.dispatch({ type: types.HIGHLIGHT_CORRECT_ANSWER });
                     setTimeout(() => {
+                        this.store.dispatch({ type: types.RESET_PCT_REMAINING });
                         this.store.dispatch({ type: types.NEXT_QUESTION });
                     }, 3000);
                 }
