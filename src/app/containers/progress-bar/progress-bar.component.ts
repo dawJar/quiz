@@ -11,7 +11,6 @@ import { Observable, Subscription } from 'rxjs/Rx';
 })
 export class ProgressBarComponent implements OnInit, OnDestroy {
 
-    currentQuizQuestion: number;
     pctRemainingRunning: boolean;
     pctRemaining: number;
     quizStarted: boolean;
@@ -21,11 +20,9 @@ export class ProgressBarComponent implements OnInit, OnDestroy {
     constructor(private store: Store<QuizState>) {
         this.subscription.push(store.select('quizReducer')
             .subscribe((state: QuizState) => {
-                console.log(state.pctRemaining);
                 this.pctRemaining = state.pctRemaining;
                 this.pctRemainingRunning = state.pctRemainingRunning;
                 this.quizStarted = state.quizStarted;
-                this.currentQuizQuestion = state.currentQuizQuestion;
             }));
     }
 
@@ -37,9 +34,9 @@ export class ProgressBarComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         this.subscription.forEach(x => x.unsubscribe());
     }
-    
+
     createTimer(): Subscription {
-        this.timer = Observable.timer(100, 100);
+        this.timer = Observable.timer(100, 300);
 
         return this.timer.subscribe(() => {
             if (this.quizStarted) {
@@ -51,13 +48,8 @@ export class ProgressBarComponent implements OnInit, OnDestroy {
                     setTimeout(() => {
                         this.store.dispatch({ type: types.NEXT_QUESTION });
                     }, 3000);
-                } else if (this.currentQuizQuestion < 4) {
-                    setTimeout(() => {
-                        this.store.dispatch({ type: types.SET_PCT_REMAINING });
-                    }, 3000);
                 }
             }
         });
     }
-
 }

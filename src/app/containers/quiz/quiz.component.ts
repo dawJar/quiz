@@ -12,22 +12,23 @@ import * as types from '../../constants/app-constants';
 export class QuizComponent implements OnInit {
 
     quizQuestions: Question[];
+    userScore: number;
     quizStarted: boolean;
     quizComplete: boolean;
     currentQuizQuestion: number;
+    pctRemainingRunning: boolean;
     currentCorrectAnswer: string;
-    userScore: number;
 
     constructor(private store: Store<QuizState>, private fs$: FirebaseService) {
         store.select('quizReducer')
             .subscribe((state: QuizState) => {
-                console.log(state);
                 this.quizQuestions = state.quizQuestions;
                 this.quizStarted = state.quizStarted;
                 this.quizComplete = state.quizComplete;
                 this.currentQuizQuestion = state.currentQuizQuestion;
                 this.userScore = state.userScore;
                 this.currentCorrectAnswer = state.currentCorrectAnswer;
+                this.pctRemainingRunning = state.pctRemainingRunning;
             });
     }
 
@@ -37,14 +38,6 @@ export class QuizComponent implements OnInit {
                 type: types.FETCHED_QUESTIONS_FROM_DATABASE,
                 payload: questions
             }));
-    }
-
-    nextQuestion(chosenAnswer: string) {
-        this.store.dispatch({ type: types.HIGHLIGHT_CORRECT_ANSWER });
-        setTimeout(() => {
-            this.store.dispatch({ type: types.VALIDATE_SCORE, payload: chosenAnswer });
-            this.store.dispatch({ type: types.NEXT_QUESTION });
-        }, 3000);
     }
 
     clickQuizCard(clickAction: string) {
@@ -67,6 +60,17 @@ export class QuizComponent implements OnInit {
         }
     }
 
+    nextQuestion(chosenAnswer: string) {
+        if (this.pctRemainingRunning) {
+            this.store.dispatch({type: types.RESET_PCT_REMAINING});
+            this.store.dispatch({type: types.HIGHLIGHT_CORRECT_ANSWER});
+            setTimeout(() => {
+                this.store.dispatch({type: types.VALIDATE_SCORE, payload: chosenAnswer});
+                this.store.dispatch({type: types.NEXT_QUESTION});
+            }, 3000);
+        }
+    }
+
     startQuiz() {
         this.store.dispatch({ type: types.SET_QUIZ_QUESTIONS });
         this.store.dispatch({ type: types.START_QUIZ });
@@ -80,5 +84,4 @@ export class QuizComponent implements OnInit {
     postScore() {
         console.log('post');
     }
-
 }

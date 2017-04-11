@@ -70,7 +70,8 @@ export const quizReducer: ActionReducer<QuizState> = (
             } else {
                 return Object.assign({}, state, {
                     currentQuizQuestion: ++state.currentQuizQuestion,
-                    currentCorrectAnswer: ''
+                    currentCorrectAnswer: '',
+                    pctRemainingRunning: true
                 });
             }
 
