@@ -19,6 +19,7 @@ import { combineReducers } from './reducers/index';
 import { QuizCardComponent } from './components/quiz-card/quiz-card.component';
 import { ProgressBarComponent } from './containers/progress-bar/progress-bar.component';
 import { UserScoreComponent } from './components/user-score/user-score.component';
+import { ResultDialogComponent } from './components/result-dialog/result-dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UserScoreComponent } from './components/user-score/user-score.component
     QuestionComponent,
     QuizCardComponent,
     ProgressBarComponent,
-    UserScoreComponent
+    UserScoreComponent,
+    ResultDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { UserScoreComponent } from './components/user-score/user-score.component
     AngularFireModule.initializeApp(firebaseConfig),
     StoreModule.provideStore(combineReducers)
   ],
+  entryComponents: [ResultDialogComponent],
   providers: [FirebaseService],
   bootstrap: [AppComponent]
 })

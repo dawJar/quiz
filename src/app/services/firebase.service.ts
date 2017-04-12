@@ -7,7 +7,6 @@ export class FirebaseService {
 
     questions: FirebaseListObservable<any[]>;
     results: FirebaseListObservable<any[]>;
-    result: Result;
 
     constructor(private af: AngularFire) {
         this.questions = this.af.database.list('/questions');
@@ -22,9 +21,8 @@ export class FirebaseService {
         return this.results;
     }
 
-    addScore(nick: string, score: number) {
-        this.result = { nick, score };
-        this.results.push(this.result);
+    addScore(result) {
+        this.results.push(result);
     }
 
 }

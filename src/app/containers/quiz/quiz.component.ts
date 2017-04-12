@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
-import { Question, QuizState } from '../../state/app-state';
+import { Question, QuizState, Result } from '../../state/app-state';
 import { Store } from '@ngrx/store';
 import * as types from '../../constants/app-constants';
+import { MdDialog } from '@angular/material';
+import { ResultDialogComponent } from '../../components/result-dialog/result-dialog.component';
 
 @Component({
     selector: 'app-quiz',
@@ -20,7 +22,11 @@ export class QuizComponent implements OnInit {
     pctRemainingRunning: boolean;
     currentCorrectAnswer: string;
 
-    constructor(private store: Store<QuizState>, private fs$: FirebaseService) {
+    constructor(
+        private store: Store<QuizState>,
+        private firebaseService: FirebaseService,
+        public dialog: MdDialog
+    ) {
         store.select('quizReducer')
             .subscribe((state: QuizState) => {
                 this.quizQuestions = state.quizQuestions;
@@ -35,7 +41,7 @@ export class QuizComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.fs$.fetchQuestions().subscribe(questions =>
+        this.firebaseService.fetchQuestions().subscribe(questions =>
             this.store.dispatch({
                 type: types.FETCHED_QUESTIONS_FROM_DATABASE,
                 payload: questions
@@ -85,6 +91,15 @@ export class QuizComponent implements OnInit {
 
     // TODO implement post score
     postScore() {
-        console.log('post');
+        const dialogRef = this.dialog.open(ResultDialogComponent);
+        dialogRef.componentInstance.score = this.userScore;
+        dialogRef.afterClosed().subscribe(nick => {
+            if (nick !== undefined || nick !== '') {
+                let result: Result = { nick, score: this.userScore };
+                this.firebaseService.addScore(result);
+                this.firebaseService.fetchResults().subscribe((x) => console.log(x));
+            }
+        });
     }
+
 }

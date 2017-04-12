@@ -1,0 +1,10 @@
+<div md-dialog-content>
+    <md-input-container>
+        <input mdInput #nick placeholder="Enter nickname">
+    </md-input-container>
+
+    <app-user-score [score]="score"></app-user-score>
+</div>
+<div md-dialog-actions>
+    <button md-button (click)="dialogRef.close(nick.value)">Post score</button>
+</div>
