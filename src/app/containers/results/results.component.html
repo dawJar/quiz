@@ -1,15 +1,17 @@
 <md-tab-group>
+
     <md-tab label="Top Scores">
         Top scores content
-        <p *ngFor="let result of results">
-            {{result.nick}}
-        </p>
+        <md-list *ngFor="let result of results">
+            <app-result [result]="result"></app-result>
+        </md-list>
     </md-tab>
 
     <md-tab label="All Results">
         All results content
-        <p *ngFor="let result of topResults">
-            {{result.nick}}
-        </p>
+        <md-list *ngFor="let result of topResults">
+            <app-result [result]="result"></app-result>
+        </md-list>
     </md-tab>
+
 </md-tab-group>
