@@ -1,0 +1,9 @@
+<md-tab-group>
+    <md-tab label="Top Scores">
+        Top scores content
+        <p *ngFor="let result of results">
+            {{result.nick}}
+        </p>
+    </md-tab>
+    <md-tab label="All Results">All results content</md-tab>
+</md-tab-group>

@@ -10,6 +10,10 @@ export interface QuizState {
     pctRemainingRunning: boolean;
 }
 
+export interface ResultsState {
+    results: Result[];
+}
+
 export interface Question {
     correctAnswer: string;
     questionId: number;
