@@ -12,6 +12,7 @@ export interface QuizState {
 
 export interface ResultsState {
     results: Result[];
+    topResults: Result[];
 }
 
 export interface Question {

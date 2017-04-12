@@ -12,6 +12,7 @@ import { FETCHED_RESULTS_FROM_DATABASE } from '../../constants/app-constants';
 export class ResultsComponent implements OnInit {
 
     results: Result[];
+    topResults: Result[];
 
     constructor(
         private firebaseService: FirebaseService,
@@ -20,6 +21,7 @@ export class ResultsComponent implements OnInit {
         store.select('resultsReducer')
             .subscribe((state: ResultsState) => {
                 this.results = state.results;
+                this.topResults = state.topResults;
             });
     }
 

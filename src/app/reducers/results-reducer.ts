@@ -3,7 +3,8 @@ import { ResultsState } from '../state/app-state';
 import * as types from '../constants/app-constants';
 
 const initialState: ResultsState = {
-    results: []
+    results: [],
+    topResults: []
 };
 
 export const resultsReducer: ActionReducer<ResultsState> = (
@@ -14,8 +15,11 @@ export const resultsReducer: ActionReducer<ResultsState> = (
     switch (action.type) {
 
         case types.FETCHED_RESULTS_FROM_DATABASE:
+            let results = action.payload;
+            let topResults = results.filter(result => result.score === 5);
             return Object.assign({}, state, {
-                results: action.payload
+                results,
+                topResults
             });
 
         default:

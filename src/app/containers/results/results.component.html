@@ -5,5 +5,11 @@
             {{result.nick}}
         </p>
     </md-tab>
-    <md-tab label="All Results">All results content</md-tab>
+
+    <md-tab label="All Results">
+        All results content
+        <p *ngFor="let result of topResults">
+            {{result.nick}}
+        </p>
+    </md-tab>
 </md-tab-group>
