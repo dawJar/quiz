@@ -1,0 +1,9 @@
+@import "../assets/styles/variables";
+@import "../assets/styles/mixins";
+
+html,
+body,
+md-sidenav-container,
+div.main-content {
+    height: 100% !important;
+}

@@ -7,15 +7,9 @@
         ></app-nav>
     </md-sidenav>
 
-    <div class="sidenav-content">
-        <button
-            class="sticky-hamburger"
-            md-button
-            (click)="mainSidenav.open()"
-        >
-            nav
-        </button>
 
+    <div class="main-content">
+        <app-header [mainSidenav]="mainSidenav"></app-header>
         <router-outlet></router-outlet>
     </div>
 

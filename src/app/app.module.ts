@@ -22,6 +22,7 @@ import { UserScoreComponent } from './components/user-score/user-score.component
 import { ResultDialogComponent } from './components/result-dialog/result-dialog.component';
 import { ResultComponent } from './components/result/result.component';
 import { PercentageScorePipe } from './pipes/percentage-score.pipe';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PercentageScorePipe } from './pipes/percentage-score.pipe';
     UserScoreComponent,
     ResultDialogComponent,
     ResultComponent,
-    PercentageScorePipe
+    PercentageScorePipe,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

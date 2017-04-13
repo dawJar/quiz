@@ -21,5 +21,7 @@
 </md-card>
 
 <div *ngIf="quizStarted !== false">
-    <button md-fab (click)="clickQuizCard('restart')">R</button>
+    <button md-fab (click)="clickQuizCard('restart')">
+        <md-icon>repeat</md-icon>
+    </button>
 </div>

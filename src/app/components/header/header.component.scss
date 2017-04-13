@@ -1,0 +1,15 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+header {
+    width: 100%;
+    height: $headerHeight;
+    background-color: $quizMainColor;
+    @include materialShadowStyle;
+}
+
+button {
+    height: 100%;
+    color: #ffffff;
+    background-color: transparent;
+}
