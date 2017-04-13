@@ -1,0 +1,11 @@
+$headerHeight: 10%;
+$contentMargin: 5%;
+$contentHeight: 70%;
+
+$quizMainColor: #673ab7;
+
+$hoverAnswerColor: #FFEE58;
+$blinkingCorrectAnswer: darken($hoverAnswerColor, 10);
+$lightenHover: lighten($hoverAnswerColor, 10);
+
+$contentWidth: 800px;
