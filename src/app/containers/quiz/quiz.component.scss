@@ -3,9 +3,14 @@
 
 md-card {
     @include contentStyle;
-    margin: $contentMargin auto 0;
+    margin: $contentMargin auto 64px;
     min-height: 200px;
     max-width: $contentWidth;
+}
+
+div.quiz-container {
+    padding: 0 10px;
+    height: $contentHeight;
 }
 
 .quiz-buttons {

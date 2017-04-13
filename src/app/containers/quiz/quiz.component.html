@@ -1,21 +1,25 @@
-<md-card *ngIf="quizStarted !== false">
-    <app-question
-        [currentQuestion]="quizQuestions[currentQuizQuestion]"
-        [currentCorrectAnswer]="currentCorrectAnswer"
-        [score]="userScore"
-        [quizQuestionQuantity]="quizQuestions.length"
-        [numberOfQuestion]="currentQuizQuestion"
-        (nextQuestion)="nextQuestion($event)"
-    >
-    </app-question>
-</md-card>
+<div class="quiz-container">
 
-<md-card class="quiz-buttons" *ngIf="quizStarted === false">
-    <app-quiz-card
-        [quizComplete]="quizComplete"
-        [score]="userScore"
-        [questionQuantity]="questionQuantity"
-        (clickQuizCard)="clickQuizCard($event)"
-    >
-    </app-quiz-card>
-</md-card>
+    <md-card *ngIf="quizStarted !== false">
+        <app-question
+            [currentQuestion]="quizQuestions[currentQuizQuestion]"
+            [currentCorrectAnswer]="currentCorrectAnswer"
+            [score]="userScore"
+            [quizQuestionQuantity]="quizQuestions.length"
+            [numberOfQuestion]="currentQuizQuestion"
+            (nextQuestion)="nextQuestion($event)"
+        >
+        </app-question>
+    </md-card>
+
+    <md-card class="quiz-buttons" *ngIf="quizStarted === false">
+        <app-quiz-card
+            [quizComplete]="quizComplete"
+            [score]="userScore"
+            [questionQuantity]="questionQuantity"
+            (clickQuizCard)="clickQuizCard($event)"
+        >
+        </app-quiz-card>
+    </md-card>
+
+</div>

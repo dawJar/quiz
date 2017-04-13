@@ -3,6 +3,7 @@
 
 div.progress-main {
     @include progressBarStyle($lightenHover);
+    top: -24px;
 }
 
 div.progress-time-remaining {

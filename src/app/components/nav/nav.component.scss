@@ -1,0 +1,17 @@
+@import "../../../assets/styles/mixins";
+
+md-nav-list {
+    width: 350px;
+}
+
+div.logo {
+    @include materialShadowStyle;
+    min-height: 250px;
+    width: 100%;
+    background-color: #783393;
+    color: white;
+    font-size: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

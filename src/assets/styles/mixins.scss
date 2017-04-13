@@ -8,9 +8,9 @@
 @mixin contentStyle {
     box-sizing: border-box;
     padding: 0;
-    padding: 0 4% 5% 4%;
+    padding: 5% 4%;
     min-height: $contentHeight !important;
-    margin: $contentMargin 3%;
+    margin: $contentMargin 10px 64px;
 }
 
 @mixin progressBarStyle($bgColor) {

@@ -1,23 +1,18 @@
-<div class="question-container">
+<app-progress-bar></app-progress-bar>
 
-    <app-question-holder
-        [numberOfQuestion]="numberOfQuestion"
-        [quizQuestionQuantity]="quizQuestionQuantity"
-        [question]="currentQuestion.question"
-    >
-    </app-question-holder>
+<app-question-holder
+    [numberOfQuestion]="numberOfQuestion"
+    [quizQuestionQuantity]="quizQuestionQuantity"
+    [question]="currentQuestion.question"
+>
+</app-question-holder>
 
-    <app-progress-bar></app-progress-bar>
+<md-card
+    *ngFor="let obj of currentQuestion.answers"
+    [ngClass]="(currentCorrectAnswer !== '' && currentCorrectAnswer === obj.tick) ? 'highlight' : ''"
+    (click)="handleNextQuestion(obj.tick)"
+>
+    {{ obj.tick }}: {{ obj.answer }}
+</md-card>
 
-    <md-card
-        *ngFor="let obj of currentQuestion.answers"
-        [ngClass]="(currentCorrectAnswer !== '' && currentCorrectAnswer === obj.tick) ? 'highlight' : ''"
-        (click)="handleNextQuestion(obj.tick)"
-    >
-        {{ obj.tick }}: {{ obj.answer }}
-    </md-card>
-
-    <app-user-score [score]="score"></app-user-score>
-
-</div>
-
+<app-user-score [score]="score"></app-user-score>
