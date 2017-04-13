@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import { Result } from '../state/app-state';
 
 @Injectable()
 export class FirebaseService {
