@@ -41,11 +41,16 @@ export class QuizComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.firebaseService.fetchQuestions().subscribe(questions =>
+        this.firebaseService.fetchQuestions().subscribe(questions => {
             this.store.dispatch({
                 type: types.FETCHED_QUESTIONS_FROM_DATABASE,
                 payload: questions
-            }));
+            });
+        });
+        this.store.dispatch({
+            type: types.SET_TITLE,
+            payload: 'quiz'
+        });
     }
 
     clickQuizCard(clickAction: string) {
@@ -93,8 +98,10 @@ export class QuizComponent implements OnInit {
         const dialogRef = this.dialog.open(ResultDialogComponent);
         dialogRef.componentInstance.score = this.userScore;
         dialogRef.afterClosed().subscribe(nick => {
-            console.log(nick !== '');
-            if (nick !== undefined || nick !== '') {
+            if (nick !== undefined) {
+                if (nick === '') {
+                    nick = 'mariano_italiano';
+                }
                 let result: Result = { nick, score: this.userScore };
                 this.firebaseService.addScore(result);
                 this.firebaseService.fetchResults().subscribe((x) => console.log(x));

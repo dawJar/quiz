@@ -10,7 +10,10 @@
 
     <!--MAIN CONTENT-->
     <div class="main-content">
-        <app-header [mainSidenav]="mainSidenav"></app-header>
+        <app-header
+            [mainSidenav]="mainSidenav"
+            [title]="currentTitle"
+        ></app-header>
         <router-outlet></router-outlet>
     </div>
 

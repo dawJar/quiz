@@ -14,3 +14,14 @@ button {
     color: #ffffff;
     background-color: transparent;
 }
+
+section {
+    @include centeredFlexBox;
+    padding-right: 32px;
+    color: #fff;
+    height: 100%;
+    float: right;
+    &::after {
+        clear: both;
+    }
+}

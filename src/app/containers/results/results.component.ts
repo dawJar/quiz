@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { Result, ResultsState } from '../../state/app-state';
 import { Store } from '@ngrx/store';
-import { FETCHED_RESULTS_FROM_DATABASE } from '../../constants/app-constants';
+import { FETCHED_RESULTS_FROM_DATABASE, SET_TITLE } from '../../constants/app-constants';
 
 @Component({
   selector: 'app-results',
@@ -26,12 +26,16 @@ export class ResultsComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.firebaseService.fetchResults().subscribe(results =>
+        this.firebaseService.fetchResults().subscribe(results => {
             this.store.dispatch({
-                type: FETCHED_RESULTS_FROM_DATABASE,
+                type   : FETCHED_RESULTS_FROM_DATABASE,
                 payload: results
-            })
-        );
+            });
+        });
+        this.store.dispatch({
+            type   : SET_TITLE,
+            payload: 'results'
+        });
     }
 
 }

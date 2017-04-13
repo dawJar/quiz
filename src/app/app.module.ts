@@ -8,7 +8,7 @@ import { MaterialModule } from '@angular/material';
 import { AngularFireModule } from 'angularfire2';
 import { firebaseConfig } from '../environments/firebase.config';
 import { QuizComponent } from './containers/quiz/quiz.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './containers/home/home.component';
 import { ResultsComponent } from './containers/results/results.component';
 import { routing } from './app.routes';
 import { NavComponent } from './components/nav/nav.component';
@@ -25,6 +25,7 @@ import { PercentageScorePipe } from './pipes/percentage-score.pipe';
 import { HeaderComponent } from './components/header/header.component';
 import { QuestionHolderComponent } from './components/question-holder/question-holder.component';
 import { SentimentIconComponent } from './components/sentiment-icon/sentiment-icon.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { SentimentIconComponent } from './components/sentiment-icon/sentiment-ic
     PercentageScorePipe,
     HeaderComponent,
     QuestionHolderComponent,
-    SentimentIconComponent
+    SentimentIconComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

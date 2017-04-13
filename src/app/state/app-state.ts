@@ -8,6 +8,7 @@ export interface QuizState {
     userScore: number;
     pctRemaining: number;
     pctRemainingRunning: boolean;
+    currentTitle: string;
 }
 
 export interface ResultsState {

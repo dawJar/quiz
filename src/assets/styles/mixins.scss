@@ -25,3 +25,10 @@
     align-items: center;
     justify-content: center;
 }
+
+@mixin mainBtnStyle {
+    padding: 20px 40px;
+    background-color: $hoverAnswerColor;
+    color: #000;
+    font-size: 22px;
+}

@@ -1,0 +1,16 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+section {
+    @include centeredFlexBox;
+    max-width: 800px;
+    margin: 32px auto;
+    height: $contentHeight;
+    font-size: 48px;
+    color: $quizMainColor;
+}
+
+a {
+    margin-top: 32px;
+    @include mainBtnStyle;
+}

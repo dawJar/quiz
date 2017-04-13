@@ -1,0 +1,17 @@
+footer {
+    position: fixed;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 20px;
+    bottom: 0px;
+    padding: 16px;
+}
+
+div.left {
+    float: left;
+    &::after { clear: both }
+}
+div.right {
+    float: right;
+    &::after { clear: both }
+}

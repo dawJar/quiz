@@ -11,7 +11,8 @@ const initialState: QuizState = {
     quizComplete: false,
     userScore: 0,
     pctRemaining: 100,
-    pctRemainingRunning: false
+    pctRemainingRunning: false,
+    currentTitle: 'home'
 };
 
 export const quizReducer: ActionReducer<QuizState> = (
@@ -103,6 +104,11 @@ export const quizReducer: ActionReducer<QuizState> = (
                 quizComplete: false,
                 userScore: 0,
                 pctRemaining: 100
+            });
+
+        case types.SET_TITLE:
+            return Object.assign({}, state, {
+                currentTitle: action.payload
             });
 
         default:
