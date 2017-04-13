@@ -1,0 +1,13 @@
+<md-grid-list cols="6" rowHeight="100px">
+
+    <md-grid-tile [colspan]="1">
+        <span class="question-number">{{ numberOfQuestion + 1 }} / {{ quizQuestionQuantity }}&nbsp;&nbsp;</span>
+    </md-grid-tile>
+
+    <md-grid-tile [colspan]="5">
+        <div class="question">
+            Q: {{ question }}
+        </div>
+    </md-grid-tile>
+
+</md-grid-list>

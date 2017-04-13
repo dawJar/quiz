@@ -10,7 +10,7 @@
     </app-question>
 </md-card>
 
-<md-card *ngIf="quizStarted === false">
+<md-card class="quiz-buttons" *ngIf="quizStarted === false">
     <app-quiz-card
         [quizComplete]="quizComplete"
         [score]="userScore"
@@ -19,9 +19,3 @@
     >
     </app-quiz-card>
 </md-card>
-
-<div *ngIf="quizStarted !== false">
-    <button md-fab (click)="clickQuizCard('restart')">
-        <md-icon>repeat</md-icon>
-    </button>
-</div>

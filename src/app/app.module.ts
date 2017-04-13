@@ -23,6 +23,7 @@ import { ResultDialogComponent } from './components/result-dialog/result-dialog.
 import { ResultComponent } from './components/result/result.component';
 import { PercentageScorePipe } from './pipes/percentage-score.pipe';
 import { HeaderComponent } from './components/header/header.component';
+import { QuestionHolderComponent } from './components/question-holder/question-holder.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { HeaderComponent } from './components/header/header.component';
     ResultDialogComponent,
     ResultComponent,
     PercentageScorePipe,
-    HeaderComponent
+    HeaderComponent,
+    QuestionHolderComponent
   ],
   imports: [
     BrowserModule,

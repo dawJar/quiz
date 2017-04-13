@@ -1,7 +1,6 @@
+@import "../../../assets/styles/variables";
+
 $answerCardWidth: 100%;
-$hoverAnswerColor: darkkhaki;
-$blinkingCorrectAnswer: darken($hoverAnswerColor, 10);
-$lighten: lighten($hoverAnswerColor, 10);
 
 md-card {
     box-sizing: border-box;
@@ -9,24 +8,17 @@ md-card {
     cursor: pointer;
     width: $answerCardWidth;
     &:hover {
-        //width: $answerCardWidth + 1%;
         background-color: $hoverAnswerColor;
     }
 }
-
-p {
-    margin-bottom: 24px;
-}
-
-span.question-number {
-  font-size: 18px;
-}
+//
+//p {
+//    margin-bottom: 24px;
+//}
 
 .highlight {
-    //background-color: darkkhaki;
     animation-name: blinkingHighlight;
     animation-duration: 3s;
-
 }
 
 @keyframes blinkingHighlight {

@@ -10,7 +10,11 @@ import { RESET_PCT_REMAINING, RESTART_QUIZ } from './constants/app-constants';
 })
 export class AppComponent {
 
-    constructor(private store: Store<QuizState>) { }
+    quizStarted: boolean;
+
+    constructor(private store: Store<QuizState>) {
+        store.select('quizReducer').subscribe((state: QuizState) => this.quizStarted = state.quizStarted);
+    }
 
     resetQuiz() {
         this.store.dispatch({ type: RESTART_QUIZ });

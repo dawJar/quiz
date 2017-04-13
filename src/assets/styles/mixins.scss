@@ -5,7 +5,16 @@
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-//@mixin contentStyle {
-//  height: $contentHeight;
-//  margin-top: $contentMarginTop;
-//}
+@mixin contentStyle {
+    box-sizing: border-box;
+    padding: 0;
+    padding: 0 4% 5% 4%;
+    min-height: $contentHeight !important;
+    margin: $contentMargin 3%;
+}
+
+@mixin progressBarStyle($bgColor) {
+  height: 6px;
+  background-color: $bgColor;
+  border-radius: 2px;
+}

@@ -1,9 +1,11 @@
 <div class="question-container">
 
-    <p>
-        <span class="question-number">{{ numberOfQuestion + 1 }} / {{ quizQuestionQuantity }}&nbsp;&nbsp;</span>
-        Q: {{ currentQuestion.question }}
-    </p>
+    <app-question-holder
+        [numberOfQuestion]="numberOfQuestion"
+        [quizQuestionQuantity]="quizQuestionQuantity"
+        [question]="currentQuestion.question"
+    >
+    </app-question-holder>
 
     <app-progress-bar></app-progress-bar>
 

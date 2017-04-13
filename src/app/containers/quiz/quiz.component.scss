@@ -1,12 +1,13 @@
 @import "../../../assets/styles/mixins";
 
 md-card {
+    @include contentStyle;
     min-height: 200px;
-    margin: auto 32px;
+    //margin: auto 32px;
 }
 
-button {
-    position: fixed;
-    bottom: 14px;
-    right: 14px;
+.quiz-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

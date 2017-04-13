@@ -1,5 +1,6 @@
 <md-sidenav-container class="main-container">
 
+    <!--SIDE-NAV-->
     <md-sidenav #mainSidenav class="sidenav">
         <app-nav
             [sidenav]="mainSidenav"
@@ -7,10 +8,17 @@
         ></app-nav>
     </md-sidenav>
 
-
+    <!--MAIN CONTENT-->
     <div class="main-content">
         <app-header [mainSidenav]="mainSidenav"></app-header>
         <router-outlet></router-outlet>
     </div>
 
 </md-sidenav-container>
+
+<!--FAB BTN-->
+<div class="fab" *ngIf="quizStarted !== false">
+    <button md-fab (click)="resetQuiz()">
+        <md-icon>replay</md-icon>
+    </button>
+</div>
