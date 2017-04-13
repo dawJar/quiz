@@ -89,7 +89,6 @@ export class QuizComponent implements OnInit {
         this.store.dispatch({ type: types.RESTART_QUIZ });
     }
 
-    // TODO implement post score
     postScore() {
         const dialogRef = this.dialog.open(ResultDialogComponent);
         dialogRef.componentInstance.score = this.userScore;

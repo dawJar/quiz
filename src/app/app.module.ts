@@ -21,6 +21,7 @@ import { ProgressBarComponent } from './containers/progress-bar/progress-bar.com
 import { UserScoreComponent } from './components/user-score/user-score.component';
 import { ResultDialogComponent } from './components/result-dialog/result-dialog.component';
 import { ResultComponent } from './components/result/result.component';
+import { PercentageScorePipe } from './pipes/percentage-score.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ResultComponent } from './components/result/result.component';
     ProgressBarComponent,
     UserScoreComponent,
     ResultDialogComponent,
-    ResultComponent
+    ResultComponent,
+    PercentageScorePipe
   ],
   imports: [
     BrowserModule,

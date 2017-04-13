@@ -1,4 +1,8 @@
-<md-tab-group>
+<div *ngIf="results.length === 0">
+    <md-spinner></md-spinner>
+</div>
+
+<md-tab-group *ngIf="results.length > 0">
 
     <md-tab label="Top Scores">
         Top scores content
