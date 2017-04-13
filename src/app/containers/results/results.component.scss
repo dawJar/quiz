@@ -1,0 +1,13 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+div.spinner {
+    height: $contentHeight;
+    @include centeredFlexBox;
+}
+
+md-list {
+    max-width: $contentWidth;
+    margin: 12px auto;
+    min-height: $contentHeight;
+}

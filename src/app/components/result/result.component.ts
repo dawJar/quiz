@@ -4,7 +4,7 @@ import { Result } from '../../state/app-state';
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
-  styleUrls: ['./result.component.css']
+  styleUrls: ['./result.component.scss']
 })
 export class ResultComponent {
 

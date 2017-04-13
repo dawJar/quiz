@@ -24,6 +24,7 @@ import { ResultComponent } from './components/result/result.component';
 import { PercentageScorePipe } from './pipes/percentage-score.pipe';
 import { HeaderComponent } from './components/header/header.component';
 import { QuestionHolderComponent } from './components/question-holder/question-holder.component';
+import { SentimentIconComponent } from './components/sentiment-icon/sentiment-icon.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { QuestionHolderComponent } from './components/question-holder/question-h
     ResultComponent,
     PercentageScorePipe,
     HeaderComponent,
-    QuestionHolderComponent
+    QuestionHolderComponent,
+    SentimentIconComponent
   ],
   imports: [
     BrowserModule,

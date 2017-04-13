@@ -1,0 +1,7 @@
+<md-icon *ngIf="score === 5">sentiment_very_satisfied</md-icon>
+
+<md-icon *ngIf="score === 4 || score === 3">sentiment_satisfied</md-icon>
+
+<md-icon *ngIf="score === 2 || score === 1" >sentiment_dissatisfied</md-icon>
+
+<md-icon *ngIf="score === 0">sentiment_very_dissatisfied</md-icon>

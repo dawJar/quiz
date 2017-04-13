@@ -6,3 +6,8 @@ html, body {
     height: 100%;
     font-family: Roboto, sans-serif;
 }
+
+/*results tab width*/
+.mat-tab-label {
+    width: 50%;
+}

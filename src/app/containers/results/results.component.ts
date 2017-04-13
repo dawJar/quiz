@@ -7,7 +7,7 @@ import { FETCHED_RESULTS_FROM_DATABASE } from '../../constants/app-constants';
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
-  styleUrls: ['./results.component.css']
+  styleUrls: ['./results.component.scss']
 })
 export class ResultsComponent implements OnInit {
 

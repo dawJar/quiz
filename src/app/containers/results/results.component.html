@@ -1,18 +1,16 @@
-<div *ngIf="results.length === 0">
+<div class="spinner" *ngIf="results.length === 0">
     <md-spinner></md-spinner>
 </div>
 
 <md-tab-group *ngIf="results.length > 0">
 
-    <md-tab label="Top Scores">
-        Top scores content
+    <md-tab label="All results">
         <md-list *ngFor="let result of results">
             <app-result [result]="result"></app-result>
         </md-list>
     </md-tab>
 
-    <md-tab label="All Results">
-        All results content
+    <md-tab label="Top scores">
         <md-list *ngFor="let result of topResults">
             <app-result [result]="result"></app-result>
         </md-list>

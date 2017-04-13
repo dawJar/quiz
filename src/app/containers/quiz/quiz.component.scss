@@ -1,9 +1,11 @@
+@import "../../../assets/styles/variables";
 @import "../../../assets/styles/mixins";
 
 md-card {
     @include contentStyle;
+    margin: $contentMargin auto 0;
     min-height: 200px;
-    //margin: auto 32px;
+    max-width: $contentWidth;
 }
 
 .quiz-buttons {

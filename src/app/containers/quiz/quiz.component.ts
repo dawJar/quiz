@@ -93,6 +93,7 @@ export class QuizComponent implements OnInit {
         const dialogRef = this.dialog.open(ResultDialogComponent);
         dialogRef.componentInstance.score = this.userScore;
         dialogRef.afterClosed().subscribe(nick => {
+            console.log(nick !== '');
             if (nick !== undefined || nick !== '') {
                 let result: Result = { nick, score: this.userScore };
                 this.firebaseService.addScore(result);
